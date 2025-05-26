@@ -22,13 +22,13 @@ The purpse of this analysis is to use machine learning and neural networks to cr
     1. For the initial analysis, I used 2 hidden layers with 80 and 30 neurons respectively and the activation function was ReLU. For the output I used Sigmoid activation function. I used ReLU and Sigmod because it captures the non-linear relationship in the data and is best for our binary classification tasks. Using two hidden layers allows for the model to learn more complex patterns in the data and with ReLU activation the model can train faster.
        It resulted in an accuracy of **72.55%**
        
-    3. To optimize the model, I changed the architecture with more neurons and hidden layers. I used 3 hidden layers and 128, 64, and 32 neurons in each. The third hidden layer increases the model depth and allows it to better learn patterns. The 128 → 64 → 32 neuron design mimics the structure of many real-world patterns and is good for dimention reduction and filtering out the noise. I kept ReLU activation and Sigmod output as these are fast and stable.
+    2. To optimize the model, I changed the architecture with more neurons and hidden layers. I used 3 hidden layers and 128, 64, and 32 neurons in each. The third hidden layer increases the model depth and allows it to better learn patterns. The 128 → 64 → 32 neuron design mimics the structure of many real-world patterns and is good for dimention reduction and filtering out the noise. I kept ReLU activation and Sigmod output as these are fast and stable.
        It slightly improved accuracy to **72.57%**
    
-    5. For next optimization, I used two hidden layers with 75 and 35 neurons in each. I channged the activation function to use tanh in the first layer to well-center the data (e.g., for standardization), and ReLU in the second for faster training and sparse activation, improving efficiency. I also added class_weight balancing to reduces bias toward majority class and improve fairness and recall.
+    3. For next optimization, I used two hidden layers with 75 and 35 neurons in each. I channged the activation function to use tanh in the first layer to well-center the data (e.g., for standardization), and ReLU in the second for faster training and sparse activation, improving efficiency. I also added class_weight balancing to reduces bias toward majority class and improve fairness and recall.
        However, this attempt slightly decreased my accuracy to **72.36%**
    
-    7. For my final optimization, I used keras tuner to find the best model parameter. Keras tuner suggested the following hyperparameters are the best: {'activation': 'tanh',
+    4. For my final optimization, I used keras tuner to find the best model parameter. Keras tuner suggested the following hyperparameters are the best: {'activation': 'tanh',
  'first_units': 67,
  'num_layers': 2,
  'units_0': 11,
